@@ -1,8 +1,10 @@
 # AzureSQL Managed Instance
 
+## AzureSQL MI 
+
 기존 환경 마이그레이션 혹은 신규 서비스 구축 시 진행해야 할 기본 구축 가이드 및 일부 기능들을 HandsOn 합니다.  
 
-## 1.변수설정
+### 1.변수설정
 
 SQL Manged Instance 인스턴스를 만들려면 Azure 내에서 여러 리소스를 만들어야 하므로 Azure PowerShell 명령은 변수를 사용하여 환경을 간소화합니다. 변수를 정의한 다음, 동일한 PowerShell 세션 내의 각 섹션에서 cmdlet을 실행합니다.
 ```powershell
@@ -31,7 +33,7 @@ $computeGeneration = "Gen5"
 $license = "LicenseIncluded" #"BasePrice" or LicenseIncluded if you have don't have SQL Server licence that can be used for AHB discount
 ```
 
-## 2.리소스그룹구성
+### 2.리소스그룹구성
 
 먼저 Azure에 연결하고, 구독 컨텍스트를 설정하고, 리소스 그룹을 만듭니다.
 
@@ -47,7 +49,7 @@ Set-AzContext -SubscriptionId $SubscriptionId
 $resourceGroup = New-AzResourceGroup -Name $resourceGroupName -Location $location -Tag @{Owner="SQLDB-Samples"}
 ```
 
-## 3.네트워킹구성
+### 3.네트워킹구성
 
 리소스 그룹을 만든 후 가상 네트워크, 서브넷, 네트워크 보안 그룹 및 라우팅 테이블과 같은 네트워킹 리소스를 구성합니다.
 
@@ -82,7 +84,7 @@ $miSubnet = Get-AzVirtualNetworkSubnetConfig -Name $miSubnetName -VirtualNetwork
 $miSubnetConfigId = $miSubnet.Id
 ```
 
-## 4.인스턴스생성
+### 4.인스턴스생성
 
 보안 강화를 위해 SQL Managed Instance 자격 증명에 대해 복잡한 임의 암호를 만듭니다.
 ```powershell
@@ -104,7 +106,7 @@ SQL MI 생성은 장시간이 걸리는 작업입니다.
 대략 4~5시간 정도 소요 후 생성이 완료됩니다.
 
 
-## 5. 
+##  
 
 
 
