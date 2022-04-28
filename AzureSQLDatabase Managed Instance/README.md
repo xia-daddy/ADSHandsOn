@@ -11,7 +11,7 @@ SQL Manged Instance 인스턴스를 만들려면 Azure 내에서 여러 리소�
 $NSnetworkModels = "Microsoft.Azure.Commands.Network.Models"
 $NScollections = "System.Collections.Generic"
 # The SubscriptionId in which to create these objects
-$SubscriptionId = 'b7fa084d-0d77-4846-9fe6-f2a983192b73'   #구독ID 입력
+$SubscriptionId = ''   #구독ID 입력
 # Set the resource group name and location for your managed instance
 $resourceGroupName = "myResourceGroup-$(Get-Random)"
 $location = "eastus"
@@ -23,8 +23,8 @@ $miSubnetAddressPrefix = "10.0.0.0/24"
 #Set the managed instance name for the new managed instance
 $instanceName = "myMIName-$(Get-Random)"
 # Set the admin login and password for your managed instance
-$miAdminSqlLogin = "msadmin"   #관리자ID
-$miAdminSqlPassword = "P@ssw0rd1765"   #관리자PW
+$miAdminSqlLogin = ""   #관리자ID
+$miAdminSqlPassword = ""   #관리자PW
 # Set the managed instance service tier, compute level, and license mode
 $edition = "General Purpose"
 $vCores = 4
